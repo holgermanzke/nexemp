@@ -1,10 +1,14 @@
 import React from "react";
+import GlobalStyles from "./components/GlobalStyles";
+import { ThemeProvider } from "emotion-theming";
+import dark from "./themes/dark";
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={dark}>
+      <GlobalStyles />
       <h1>candydate</h1>
-    </div>
+    </ThemeProvider>
   );
 }
 
