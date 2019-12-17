@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "cd client && npm run storybook"
+    "storybook": "cd client && npm run storybook",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
