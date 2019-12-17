@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import logout from "../resources/logout.svg";
 
 const NavContainer = styled.div`
   display: flex;
@@ -15,14 +16,25 @@ const NavButton = styled.button`
   border: 1px solid ${props => props.theme.colors.secondary};
   outline: none;
   border-radius: 15px;
+  color: ${props => props.theme.colors.text};
+  font-size: 24px;
+  font-weight: 100;
 `;
 
-function NavBar() {
+const LogoutIcon = styled.img`
+  width: 25px;
+  height: 21.875px;
+  margin-top: 39px;
+  margin-right: 25px;
+`;
+
+function NavBar(navPage) {
   return (
     <NavContainer>
-      <NavButton />
-      <NavButton />
-      <NavButton />
+      <NavButton>Suche</NavButton>
+      <NavButton>Kandidaten</NavButton>
+      <NavButton>Nachrichten</NavButton>
+      <LogoutIcon src={logout} />
     </NavContainer>
   );
 }
