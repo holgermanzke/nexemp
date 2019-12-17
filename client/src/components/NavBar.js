@@ -19,6 +19,12 @@ const NavButton = styled.button`
   color: ${props => props.theme.colors.text};
   font-size: 24px;
   font-weight: 100;
+  :hover {
+    color: ${props => props.theme.colors.secondary};
+  }
+  :active {
+    border-color: ${props => props.theme.colors.primary};
+  }
 `;
 
 const LogoutIcon = styled.img`
@@ -26,6 +32,12 @@ const LogoutIcon = styled.img`
   height: 21.875px;
   margin-top: 39px;
   margin-right: 25px;
+  :hover {
+    color: ${props => props.theme.colors.secondary};
+  }
+  :active {
+    border-color: ${props => props.theme.colors.primary};
+  }
 `;
 
 function NavBar(navPage) {
