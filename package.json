@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "storybook": "cd client && npm run storybook",
     "client": "cd client && npm start"
   },
   "repository": {
