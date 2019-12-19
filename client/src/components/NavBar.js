@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import logout from "../resources/logout.svg";
+import LogoutIcon from "./icons/LogoutIcon";
 
 const NavContainer = styled.div`
   display: flex;
@@ -27,20 +27,13 @@ const NavButton = styled.button`
   }
 `;
 
-const LogoutIcon = styled.img`
-  width: 25px;
-  height: 21.875px;
-  margin-top: 39px;
-  margin-right: 25px;
-`;
-
 function NavBar(navPage) {
   return (
     <NavContainer>
       <NavButton>Suche</NavButton>
       <NavButton>Kandidaten</NavButton>
       <NavButton>Nachrichten</NavButton>
-      <LogoutIcon src={logout} />
+      <LogoutIcon />
     </NavContainer>
   );
 }
