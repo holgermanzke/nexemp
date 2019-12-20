@@ -15,7 +15,8 @@ export function WithImage() {
         "https://images.unsplash.com/photo-1562071707-7249ab429b2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
       )}
       alt={text("alt", "Stock Frau")}
-      alt="alt"
+      name={text("Name", "Hannelore Fischer")}
+      profession={text("Beruf", "Grafik Designerin")}
     />
   );
 }
