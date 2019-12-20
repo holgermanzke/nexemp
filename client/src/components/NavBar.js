@@ -27,13 +27,13 @@ const NavButton = styled.button`
   }
 `;
 
-function NavBar(navPage) {
+function NavBar({ onClick }) {
   return (
     <NavContainer>
-      <NavButton>Suche</NavButton>
-      <NavButton>Kandidaten</NavButton>
-      <NavButton>Nachrichten</NavButton>
-      <LogoutIcon />
+      <NavButton onClick={onClick}>Suche</NavButton>
+      <NavButton onClick={onClick}>Kandidaten</NavButton>
+      <NavButton onClick={onClick}>Nachrichten</NavButton>
+      <LogoutIcon onClick={onClick} />
     </NavContainer>
   );
 }
