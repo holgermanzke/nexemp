@@ -23,7 +23,6 @@ export default function LogoutIcon() {
       height="31.5"
       viewBox="0 0 36 31.5"
     >
-      <defs></defs>
       <Logout d="M13.5,0V4.5h18V27h-18v4.5H36V0ZM9,9,0,15.75,9,22.5V18H27V13.5H9Z" />
     </Svg>
   );
