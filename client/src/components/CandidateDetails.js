@@ -8,10 +8,12 @@ const Container = styled.div`
   justify-items: center;
 `;
 const Image = styled.img`
-  max-height: 200px;
-  /* max-width: 200px; */
+  height: 300px;
+  width: 250px;
   border-radius: 15px;
   margin: 25px 25px 0 25px;
+  object-fit: cover;
+  object-position: top center;
 `;
 const Name = styled.h1`
   margin: 10px 25px 0 35px;
