@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import CheckIcon from "./icons/CheckIcon";
+import MailIcon from "./icons/MailIcon";
 
 const Container = styled.div`
   width: 300px;
@@ -42,12 +43,19 @@ const SpecialDetail = styled.h3`
   font-weight: 200;
 `;
 
+const Mailadress = styled.p`
+  margin: 15px 25px 0 5px;
+  font-size: 0.8rem;
+  font-weight: 200;
+`;
+
 export default function CandidateDetails({
   imgSrc = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg",
   alt,
   name,
   profession,
-  experience
+  experience,
+  email
 }) {
   return (
     <>
@@ -63,6 +71,10 @@ export default function CandidateDetails({
         <FlexWrapper>
           <CheckIcon />
           <SpecialDetail>Projektmanagement</SpecialDetail>
+        </FlexWrapper>
+        <FlexWrapper>
+          <MailIcon />
+          <Mailadress>{email}</Mailadress>
         </FlexWrapper>
       </Container>
     </>

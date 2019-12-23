@@ -18,6 +18,7 @@ export function WithImage() {
       name={text("Name", "Hannelore Fischer")}
       profession={text("Beruf", "Grafik Designerin")}
       experience={number("Berufserfahrun", 4)}
+      email={text("E-Mail", "mailme@neuefische.de")}
     />
   );
 }
