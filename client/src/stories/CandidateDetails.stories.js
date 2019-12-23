@@ -36,6 +36,15 @@ export function WithoutImage() {
         "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg"
       )}
       alt={text("alt", "Name")}
+      name={text("Name", "Hannelore Fischer")}
+      profession={text("Beruf", "Grafik Designerin")}
+      experience={number("Berufserfahrung", 4)}
+      special1={text("Special1", "React")}
+      special2={text("Special2", "Projektmanagement")}
+      email={text("E-Mail", "mailme@neuefische.de")}
+      phone={text("Phone", "+49 178 6767678")}
+      street={text("Straße", "Breite Str. 23")}
+      city={text("Stadt", "41245 Köln")}
     />
   );
 }
