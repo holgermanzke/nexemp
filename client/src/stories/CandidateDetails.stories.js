@@ -17,10 +17,11 @@ export function WithImage() {
       alt={text("alt", "Stock Frau")}
       name={text("Name", "Hannelore Fischer")}
       profession={text("Beruf", "Grafik Designerin")}
-      experience={number("Berufserfahrun", 4)}
+      experience={number("Berufserfahrung", 4)}
       special1={text("Special1", "React")}
       special2={text("Special2", "Projektmanagement")}
       email={text("E-Mail", "mailme@neuefische.de")}
+      phone={text("Phone", "+49 178 6767678")}
     />
   );
 }

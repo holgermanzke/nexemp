@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import CheckIcon from "./icons/CheckIcon";
 import MailIcon from "./icons/MailIcon";
+import PhoneIcon from "./icons/PhoneIcon";
 
 const Container = styled.div`
   width: 300px;
@@ -48,6 +49,11 @@ const Mailadress = styled.p`
   font-size: 0.8rem;
   font-weight: 200;
 `;
+const PhoneNumber = styled.p`
+  margin: 0 0 0 5px;
+  font-size: 0.8rem;
+  font-weight: 200;
+`;
 
 export default function CandidateDetails({
   imgSrc = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg",
@@ -57,7 +63,8 @@ export default function CandidateDetails({
   experience,
   special1,
   special2,
-  email
+  email,
+  phone
 }) {
   return (
     <>
@@ -77,6 +84,10 @@ export default function CandidateDetails({
         <FlexWrapper>
           <MailIcon />
           <Mailadress>{email}</Mailadress>
+        </FlexWrapper>
+        <FlexWrapper>
+          <PhoneIcon />
+          <PhoneNumber>{phone}</PhoneNumber>
         </FlexWrapper>
       </Container>
     </>
