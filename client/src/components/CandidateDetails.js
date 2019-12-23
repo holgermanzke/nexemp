@@ -41,23 +41,23 @@ const FlexWrapper = styled.div`
 `;
 
 const SpecialDetail = styled.h3`
-  margin: 5px 25px 0 5px;
+  margin: 5px 25px 0 10px;
   font-size: 0.9rem;
   font-weight: 200;
 `;
 
 const Mailadress = styled.p`
-  margin: 15px 25px 0 5px;
+  margin: 15px 25px 0 15px;
   font-size: 0.8rem;
   font-weight: 200;
 `;
 const PhoneNumber = styled.p`
-  margin: 0 0 0 5px;
+  margin: 0 0 0 15px;
   font-size: 0.8rem;
   font-weight: 200;
 `;
 const AdressDetails = styled.p`
-  margin: 0 0 0 5px;
+  margin: 0 0 0 15px;
   font-size: 0.8rem;
   font-weight: 200;
 `;

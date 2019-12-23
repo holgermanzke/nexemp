@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 
 const Svg = styled.svg`
   fill: ${props => props.theme.colors.text};
-  width: 17px;
-  height: 17px;
+  width: 14px;
   margin-left: 35px;
 `;
 const Path = styled.path``;

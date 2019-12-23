@@ -7,7 +7,7 @@ const Svg = styled.svg`
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3px;
-  width: 17px;
+  width: 14px;
   margin-left: 35px;
   margin-top: 15px;
 `;

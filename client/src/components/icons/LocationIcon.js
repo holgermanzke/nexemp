@@ -2,8 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const Svg = styled.svg`
-  width: 12.07px;
-  height: 17.24px;
+  width: 14px;
   fill: ${props => props.theme.colors.text};
   margin-left: 35px;
 `;
