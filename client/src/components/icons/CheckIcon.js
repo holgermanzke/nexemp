@@ -5,7 +5,6 @@ const Svg = styled.svg`
   width: 27px;
   height: 20px;
   margin-left: 35px;
-  /* margin-top: 10px; */
 `;
 
 const Path = styled.path`

@@ -1,6 +1,6 @@
 import React from "react";
 import CandidateDetails from "../components/CandidateDetails";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
 
 export default {
   title: "Candidate Information",
@@ -17,6 +17,7 @@ export function WithImage() {
       alt={text("alt", "Stock Frau")}
       name={text("Name", "Hannelore Fischer")}
       profession={text("Beruf", "Grafik Designerin")}
+      experience={number("Berufserfahrun", 4)}
     />
   );
 }
