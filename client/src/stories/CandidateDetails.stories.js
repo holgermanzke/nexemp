@@ -22,6 +22,8 @@ export function WithImage() {
       special2={text("Special2", "Projektmanagement")}
       email={text("E-Mail", "mailme@neuefische.de")}
       phone={text("Phone", "+49 178 6767678")}
+      street={text("Straße", "Breite Str. 23")}
+      city={text("Stadt", "41245 Köln")}
     />
   );
 }

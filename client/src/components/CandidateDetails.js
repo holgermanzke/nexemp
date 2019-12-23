@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import CheckIcon from "./icons/CheckIcon";
 import MailIcon from "./icons/MailIcon";
 import PhoneIcon from "./icons/PhoneIcon";
+import LocationIcon from "./icons/LocationIcon";
 
 const Container = styled.div`
   width: 300px;
@@ -36,6 +37,7 @@ const Experience = styled.h4`
 const FlexWrapper = styled.div`
   display: flex;
   margin-top: 10px;
+  align-items: center;
 `;
 
 const SpecialDetail = styled.h3`
@@ -54,6 +56,11 @@ const PhoneNumber = styled.p`
   font-size: 0.8rem;
   font-weight: 200;
 `;
+const AdressDetails = styled.p`
+  margin: 0 0 0 5px;
+  font-size: 0.8rem;
+  font-weight: 200;
+`;
 
 export default function CandidateDetails({
   imgSrc = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg",
@@ -64,7 +71,9 @@ export default function CandidateDetails({
   special1,
   special2,
   email,
-  phone
+  phone,
+  street,
+  city
 }) {
   return (
     <>
@@ -88,6 +97,14 @@ export default function CandidateDetails({
         <FlexWrapper>
           <PhoneIcon />
           <PhoneNumber>{phone}</PhoneNumber>
+        </FlexWrapper>
+        <FlexWrapper>
+          <LocationIcon />
+          <AdressDetails>
+            {street}
+            <br />
+            {city}
+          </AdressDetails>
         </FlexWrapper>
       </Container>
     </>
