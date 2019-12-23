@@ -18,6 +18,8 @@ export function WithImage() {
       name={text("Name", "Hannelore Fischer")}
       profession={text("Beruf", "Grafik Designerin")}
       experience={number("Berufserfahrun", 4)}
+      special1={text("Special1", "React")}
+      special2={text("Special2", "Projektmanagement")}
       email={text("E-Mail", "mailme@neuefische.de")}
     />
   );

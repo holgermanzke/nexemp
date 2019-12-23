@@ -55,6 +55,8 @@ export default function CandidateDetails({
   name,
   profession,
   experience,
+  special1,
+  special2,
   email
 }) {
   return (
@@ -66,11 +68,11 @@ export default function CandidateDetails({
         <Experience>Berufserfahrung: {experience} Jahre</Experience>
         <FlexWrapper>
           <CheckIcon />
-          <SpecialDetail>React</SpecialDetail>
+          <SpecialDetail>{special1}</SpecialDetail>
         </FlexWrapper>
         <FlexWrapper>
           <CheckIcon />
-          <SpecialDetail>Projektmanagement</SpecialDetail>
+          <SpecialDetail>{special2}</SpecialDetail>
         </FlexWrapper>
         <FlexWrapper>
           <MailIcon />
