@@ -14,12 +14,6 @@ const Container = styled.div`
   justify-items: center;
 `;
 
-// const FlexWrapper = styled.div`
-//   display: flex;
-//   margin-top: 10px;
-//   align-items: center;
-// `;
-
 export default function CandidateDetails({
   candSrc,
   alt,
