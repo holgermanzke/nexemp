@@ -10,7 +10,7 @@
     "test": "cd client && npm run test",
     "build-storybook": "cd client && npm run build-storybook",
     "postinstall": "cd client && npm install",
-    "server": "npx nodemon server.js"
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
