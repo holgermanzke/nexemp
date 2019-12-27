@@ -9,7 +9,8 @@
     "build": "npm run build-storybook",
     "test": "cd client && npm run test",
     "build-storybook": "cd client && npm run build-storybook",
-    "postinstall": "cd client && npm install"
+    "postinstall": "cd client && npm install",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "pg": "^7.15.1"
   }
 }
