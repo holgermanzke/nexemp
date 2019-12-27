@@ -1,32 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import NavBar from "./NavBar";
+import AboutMe from "./profileDetails/AboutMe";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const AboutMe = styled.div`
-  background: ${props => props.theme.colors.primary};
-  width: 60%;
-  max-height: 150px;
-  border-radius: 15px;
-  margin-top: 30px;
-  align-self: center;
-`;
-
-const Headline = styled.h3`
-  font-size: 1rem;
-  padding: 8px;
-  margin: 0;
-`;
-
-const Description = styled.p`
-  font-size: 0.8rem;
-  font-weight: 300;
-  padding: 0 8px 8px 8px;
-  margin: 0;
 `;
 
 const CareerHeadline = styled.h2`
@@ -69,47 +48,78 @@ const CareerProfession = styled.h4`
 `;
 
 const Contact = styled.button`
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 300;
   width: 150px;
   border-radius: 15px;
-  background: ${props => props.theme.colors.secondary};
+  background: transparent;
+  border: 1px solid ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.text};
-  border: none;
   outline: none;
   margin: 40px 60px 20px auto;
-  height: 25px;
+  height: 35px;
+  :hover {
+    color: ${props => props.theme.colors.secondary};
+  }
+  :active {
+    border: 1px solid ${props => props.theme.colors.primary};
+  }
 `;
-export default function ProfileDetails({ aboutMe }) {
+export default function ProfileDetails({
+  candAboutMe,
+  date1from,
+  date1due,
+  comp1,
+  city1,
+  profession1,
+  date2from,
+  date2due,
+  comp2,
+  city2,
+  profession2,
+  date3from,
+  date3due,
+  comp3,
+  city3,
+  profession3
+}) {
   return (
     <Container>
       <NavBar />
-      <AboutMe>
-        <Headline>About Me:</Headline>
-        <Description>{aboutMe}</Description>
-      </AboutMe>
+      <AboutMe aboutMe={candAboutMe} />
+
       <CareerHeadline>Werdegang</CareerHeadline>
       <CareerWrapper>
-        <CareerDate>08.2016 - heute</CareerDate>
+        <CareerDate>
+          {date1from} - {date1due}
+        </CareerDate>
         <CompanyWrapper>
-          <CareerCompany>neue fische GmbH, Köln</CareerCompany>
-          <CareerProfession>Web Developerin</CareerProfession>
+          <CareerCompany>
+            {comp1}, {city1}
+          </CareerCompany>
+          <CareerProfession>{profession1}</CareerProfession>
         </CompanyWrapper>
       </CareerWrapper>
       <CareerWrapper>
-        <CareerDate>09.2015 - 07.2016</CareerDate>
+        <CareerDate>
+          {date2from} - {date2due}
+        </CareerDate>
         <CompanyWrapper>
           <CareerCompany>
-            Alte Vögel GmbH & Co. KG, Mülheim an der Ruhr
-            <CareerProfession>Junior Web Developerin</CareerProfession>
+            {comp2}, {city2}
+            <CareerProfession>{profession2}</CareerProfession>
           </CareerCompany>
         </CompanyWrapper>
       </CareerWrapper>
       <CareerWrapper>
-        <CareerDate>09.2011 - 06.2015</CareerDate>
+        <CareerDate>
+          {date3from} - {date3due}
+        </CareerDate>
         <CompanyWrapper>
-          <CareerCompany>Ruhr Universität Bochum</CareerCompany>
-          <CareerProfession>Studium der Informatik</CareerProfession>
+          <CareerCompany>
+            {comp3}, {city3}
+          </CareerCompany>
+          <CareerProfession>{profession3}</CareerProfession>
         </CompanyWrapper>
       </CareerWrapper>
       <Contact>Kontakt aufnehmen</Contact>
