@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import NavBar from "./NavBar";
 import AboutMe from "./profileDetails/AboutMe";
+import Career from "./profileDetails/Career";
+import Button from "./Button";
 
 const Container = styled.div`
   display: flex;
@@ -13,75 +15,23 @@ const CareerHeadline = styled.h2`
   margin: 35px 0 0 30px;
 `;
 
-const CareerWrapper = styled.div`
-  display: flex;
-  margin-top: 30px;
-`;
-
-const CareerDate = styled.h3`
-  font-size: 1rem;
-  font-weight: 300;
-  width: 200px;
-  background: ${props => props.theme.colors.primary};
-  border-radius: 15px;
-  margin: 0 0 0 30px;
-  text-align: center;
-  padding: 10px 0;
-  max-height: 40px;
-`;
-
-const CareerCompany = styled.h3`
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-`;
-
-const CompanyWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-`;
-const CareerProfession = styled.h4`
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 0;
-`;
-
-const Contact = styled.button`
-  font-size: 0.9rem;
-  font-weight: 300;
-  width: 150px;
-  border-radius: 15px;
-  background: transparent;
-  border: 1px solid ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.text};
-  outline: none;
-  margin: 40px 60px 20px auto;
-  height: 35px;
-  :hover {
-    color: ${props => props.theme.colors.secondary};
-  }
-  :active {
-    border: 1px solid ${props => props.theme.colors.primary};
-  }
-`;
 export default function ProfileDetails({
   candAboutMe,
-  date1from,
-  date1due,
-  comp1,
-  city1,
-  profession1,
-  date2from,
-  date2due,
-  comp2,
-  city2,
-  profession2,
-  date3from,
-  date3due,
-  comp3,
-  city3,
-  profession3
+  candDate1From,
+  candDate1Due,
+  candComp1,
+  candCity1,
+  candProfession1,
+  candDate2From,
+  candDate2Due,
+  candComp2,
+  candCity2,
+  candProfession2,
+  candDate3From,
+  candDate3Due,
+  candComp3,
+  candCity3,
+  candProfession3
 }) {
   return (
     <Container>
@@ -89,40 +39,28 @@ export default function ProfileDetails({
       <AboutMe aboutMe={candAboutMe} />
 
       <CareerHeadline>Werdegang</CareerHeadline>
-      <CareerWrapper>
-        <CareerDate>
-          {date1from} - {date1due}
-        </CareerDate>
-        <CompanyWrapper>
-          <CareerCompany>
-            {comp1}, {city1}
-          </CareerCompany>
-          <CareerProfession>{profession1}</CareerProfession>
-        </CompanyWrapper>
-      </CareerWrapper>
-      <CareerWrapper>
-        <CareerDate>
-          {date2from} - {date2due}
-        </CareerDate>
-        <CompanyWrapper>
-          <CareerCompany>
-            {comp2}, {city2}
-            <CareerProfession>{profession2}</CareerProfession>
-          </CareerCompany>
-        </CompanyWrapper>
-      </CareerWrapper>
-      <CareerWrapper>
-        <CareerDate>
-          {date3from} - {date3due}
-        </CareerDate>
-        <CompanyWrapper>
-          <CareerCompany>
-            {comp3}, {city3}
-          </CareerCompany>
-          <CareerProfession>{profession3}</CareerProfession>
-        </CompanyWrapper>
-      </CareerWrapper>
-      <Contact>Kontakt aufnehmen</Contact>
+      <Career
+        dateFrom={candDate1From}
+        dateDue={candDate1Due}
+        comp={candComp1}
+        city={candCity1}
+        profession={candProfession1}
+      />
+      <Career
+        dateFrom={candDate2From}
+        dateDue={candDate2Due}
+        comp={candComp2}
+        city={candCity2}
+        profession={candProfession2}
+      />
+      <Career
+        dateFrom={candDate3From}
+        dateDue={candDate3Due}
+        comp={candComp3}
+        city={candCity3}
+        profession={candProfession3}
+      />
+      <Button buttonText="Kontakt aufnehmen" />
     </Container>
   );
 }
