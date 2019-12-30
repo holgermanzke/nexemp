@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import NavBar from "./NavBar";
 import AboutMe from "./profileDetails/AboutMe";
 import Career from "./profileDetails/Career";
 import Button from "./Button";
