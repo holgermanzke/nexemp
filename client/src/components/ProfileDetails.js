@@ -35,7 +35,6 @@ export default function ProfileDetails({
 }) {
   return (
     <Container>
-      <NavBar />
       <AboutMe aboutMe={candAboutMe} />
 
       <CareerHeadline>Werdegang</CareerHeadline>

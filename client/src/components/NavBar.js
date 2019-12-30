@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const NavContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  left: 550px;
 `;
 
 const NavButton = styled(Link)`
