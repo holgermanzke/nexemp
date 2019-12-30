@@ -7,6 +7,7 @@ import Button from "./Button";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
 `;
 
 const CareerHeadline = styled.h2`

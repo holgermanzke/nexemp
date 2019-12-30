@@ -7,6 +7,7 @@ const NavContainer = styled.div`
   display: flex;
   position: absolute;
   left: 550px;
+  top: 0;
 `;
 
 const NavButton = styled(Link)`
