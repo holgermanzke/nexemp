@@ -44,5 +44,6 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8"
-  }
+  },
+  "proxy": "http://localhost:3080"
 }
