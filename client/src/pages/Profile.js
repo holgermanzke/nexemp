@@ -29,6 +29,11 @@ export default function Profile(candId) {
           <PageWrapper key={profile.id}>
             <CandidateDetails
               candName={profile.first_name + " " + profile.last_name}
+              candProfession={profile.position_or_graduation}
+              candEMail={profile.mail}
+              candPhone={profile.sender_phone_first}
+              candStreet={profile.street + " " + profile.number}
+              candCity={profile.town}
             />
             <Separator />
             <ProfileDetails />
