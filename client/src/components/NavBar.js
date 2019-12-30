@@ -1,24 +1,30 @@
 import React from "react";
 import styled from "@emotion/styled";
 import LogoutIcon from "./icons/LogoutIcon";
+import { Link } from "react-router-dom";
 
 const NavContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-const NavButton = styled.button`
+const NavButton = styled(Link)`
   width: 150px;
   height: 50px;
   margin-top: 25px;
   margin-right: 25px;
   background: transparent;
   border: 1px solid ${props => props.theme.colors.secondary};
-  outline: none;
+  /* outline: none; */
   border-radius: 15px;
   color: ${props => props.theme.colors.text};
   font-size: 24px;
   font-weight: 100;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   :hover {
     color: ${props => props.theme.colors.secondary};
   }
@@ -27,13 +33,13 @@ const NavButton = styled.button`
   }
 `;
 
-function NavBar({ onClick }) {
+function NavBar() {
   return (
     <NavContainer>
-      <NavButton onClick={onClick}>Suche</NavButton>
-      <NavButton onClick={onClick}>Kandidaten</NavButton>
-      <NavButton onClick={onClick}>Nachrichten</NavButton>
-      <LogoutIcon onClick={onClick} />
+      <NavButton to="/search">Suche</NavButton>
+      <NavButton to="/mycandidates">Kandidaten</NavButton>
+      <NavButton to="message">Nachrichten</NavButton>
+      <LogoutIcon />
     </NavContainer>
   );
 }
