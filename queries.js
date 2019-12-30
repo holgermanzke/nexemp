@@ -18,4 +18,13 @@ const getCandidates = async (request, response) => {
   response.status(200).json(results.rows);
 };
 
-module.exports = { getCandidates };
+const getCandidatesById = async (request, response) => {
+  const id = parseInt(request.params.id);
+  const results = await pool.query(
+    "SELECT * FROM application_application WHERE id=$1",
+    [id]
+  );
+  response.status(200).json(results.rows);
+};
+
+module.exports = { getCandidates, getCandidatesById };
