@@ -15,13 +15,11 @@ export default function Profile(candId) {
   async function refreshProfile() {
     const foundProfile = await getCandidateDetails(candId);
     setProfile(foundProfile);
-    return profile;
   }
 
   React.useEffect(() => {
     refreshProfile();
-    // eslint-disable-next-line
-  }, []);
+  });
   return (
     <>
       {profile.map(profile => {
