@@ -28,13 +28,15 @@ export default function Profile(candId) {
             <CandidateDetails
               candName={profile.first_name + " " + profile.last_name}
               candProfession={profile.position_or_graduation}
+              candSpecial1={profile.first_activity}
+              candSpecial2={profile.second_activity}
               candEMail={profile.mail}
               candPhone={profile.sender_phone_first}
               candStreet={profile.street + " " + profile.number}
               candCity={profile.town}
             />
             <Separator />
-            <ProfileDetails />
+            <ProfileDetails candComp1={profile.company} />
           </PageWrapper>
         );
       })}
