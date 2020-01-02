@@ -10,19 +10,19 @@ const PageWrapper = styled.div`
 `;
 
 export default function Profile(candId) {
-  const [profile, setProfile] = React.useState([]);
+  const [profiles, setProfiles] = React.useState([]);
 
-  async function refreshProfile() {
-    const foundProfile = await getCandidateDetails(candId);
-    setProfile(foundProfile);
+  async function refreshProfiles() {
+    const foundProfiles = await getCandidateDetails(candId);
+    setProfiles(foundProfiles);
   }
 
   React.useEffect(() => {
-    refreshProfile();
+    refreshProfiles();
   });
   return (
     <>
-      {profile.map(profile => {
+      {profiles.map(profile => {
         return (
           <PageWrapper key={profile.id}>
             <CandidateDetails
