@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InputLarge from "../components/InputLarge";
+import SliderLarge from "../components/SliderLarge";
 
 export default {
   title: "Candidate Search"
@@ -18,6 +19,7 @@ export function Search() {
   return (
     <Container>
       <InputLarge />
+      <SliderLarge />
     </Container>
   );
 }
