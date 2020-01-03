@@ -27,13 +27,12 @@ export default function SearchExperience({ value, onChange }) {
         <Label>
           <StyledSpan label="Berufserfahrung" />
           <InputSlider
-            type="range"
             min="0"
             max="41"
             step="1"
             value={value}
             onChange={onChange}
-            sliderWidth="400px"
+            sliderWidth="350px"
           />
         </Label>
         <Value>

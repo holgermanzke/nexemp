@@ -1,13 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import StyledSpan from "./StyledSpan";
-
-const Label = styled.label`
-  font-size: 1.3rem;
-  width: 60%;
-  display: flex;
-  align-items: center;
-`;
 
 const Input = styled.input`
   width: ${props => props.width};
@@ -23,10 +15,5 @@ const Input = styled.input`
 `;
 
 export default function InputField({ inputWidth }) {
-  return (
-    <Label>
-      <StyledSpan label="Berusbezeichnung" />
-      <Input width={inputWidth} />
-    </Label>
-  );
+  return <Input width={inputWidth} />;
 }
