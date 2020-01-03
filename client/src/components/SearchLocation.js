@@ -21,15 +21,25 @@ const Value = styled.span`
   display: flex;
 `;
 
-export default function SearchLocation({ value, onChange }) {
+export default function SearchLocation({
+  cityValue,
+  cityChange,
+  radiusValue,
+  radiusChange
+}) {
   return (
     <Wrapper>
       <Label>
         <StyledSpan label="Ort" />
-        <InputField inputWidth="140px" />
+        <InputField
+          type="number"
+          value={cityValue}
+          onChange={cityChange}
+          inputWidth="140px"
+        />
         <InputSlider
-          value={value}
-          onChange={onChange}
+          value={radiusValue}
+          onChange={radiusChange}
           sliderWidth="140px"
           min="10"
           max="210"
@@ -37,7 +47,9 @@ export default function SearchLocation({ value, onChange }) {
         />
       </Label>
       <Value>
-        {value > 200 ? "mehr als 200 Kilometer" : `${value} Kilometer`}
+        {radiusValue > 200
+          ? "mehr als 200 Kilometer"
+          : `${radiusValue} Kilometer`}
       </Value>
     </Wrapper>
   );

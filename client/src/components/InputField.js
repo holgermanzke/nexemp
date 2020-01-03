@@ -14,6 +14,8 @@ const Input = styled.input`
   color: ${props => props.theme.colors.background};
 `;
 
-export default function InputField({ inputWidth }) {
-  return <Input width={inputWidth} />;
+export default function InputField({ type, value, onChange, inputWidth }) {
+  return (
+    <Input type={type} value={value} onChange={onChange} width={inputWidth} />
+  );
 }

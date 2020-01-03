@@ -18,8 +18,9 @@ const Container = styled.div`
 `;
 
 export function Search() {
-  const [profession, setProfession] = React.useState("Null");
+  const [profession, setProfession] = React.useState("");
   const [experience, setExperience] = React.useState(0);
+  const [city, setCity] = React.useState("");
   const [radius, setRadius] = React.useState(10);
   return (
     <Container>
@@ -32,8 +33,10 @@ export function Search() {
         onChange={event => setExperience(parseInt(event.target.value))}
       />
       <SearchLocation
-        value={radius}
-        onChange={event => setRadius(event.target.value)}
+        cityValue={city}
+        cityChange={event => setCity(event.target.value)}
+        radiusValue={radius}
+        radiusChange={event => setRadius(event.target.value)}
       />
     </Container>
   );
