@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import InputLarge from "../components/InputLarge";
+import SearchProfession from "../components/SearchProfession";
 import SearchExperience from "../components/SearchExperience";
+import SearchLocation from "../components/SearchLocation";
 
 export default {
   title: "Candidate Search"
@@ -17,14 +18,19 @@ const Container = styled.div`
 `;
 
 export function Search() {
+  const [profession, setProfession] = React.useState("Null");
   const [radius, setRadius] = React.useState(0);
   return (
     <Container>
-      <InputLarge />
+      <SearchProfession
+        value={profession}
+        onChange={event => setProfession(event.target.value)}
+      />
       <SearchExperience
         value={radius}
         onChange={event => setRadius(parseInt(event.target.value))}
       />
+      <SearchLocation />
     </Container>
   );
 }

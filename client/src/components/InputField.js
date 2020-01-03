@@ -10,7 +10,7 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 400px;
+  width: ${props => props.width};
   height: 45px;
   margin-left: 30px;
   background: ${props => props.theme.colors.text};
@@ -22,11 +22,11 @@ const Input = styled.input`
   color: ${props => props.theme.colors.background};
 `;
 
-export default function InputLarge() {
+export default function InputField({ inputWidth }) {
   return (
     <Label>
       <StyledSpan label="Berusbezeichnung" />
-      <Input />
+      <Input width={inputWidth} />
     </Label>
   );
 }
