@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 
 const Label = styled.label`
   font-size: 1.3rem;
+  width: 700px;
 `;
 
 const Input = styled.input`
@@ -21,7 +22,8 @@ const Input = styled.input`
 export default function InputLarge() {
   return (
     <Label>
-      Berufsbezeichnung: <Input />
+      Berufsbezeichnung:
+      <Input />
     </Label>
   );
 }

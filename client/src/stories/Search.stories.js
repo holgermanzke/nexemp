@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InputLarge from "../components/InputLarge";
-import SliderLarge from "../components/SliderLarge";
+import InputSliderLarge from "../components/InputSliderLarge";
 
 export default {
   title: "Candidate Search"
@@ -15,11 +15,16 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
 `;
+
 export function Search() {
+  const [radius, setRadius] = React.useState(0);
   return (
     <Container>
       <InputLarge />
-      <SliderLarge />
+      <InputSliderLarge
+        value={radius}
+        onChange={event => setRadius(parseInt(event.target.value))}
+      />
     </Container>
   );
 }
