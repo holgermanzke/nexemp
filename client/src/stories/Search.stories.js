@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InputLarge from "../components/InputLarge";
-import InputSliderLarge from "../components/InputSliderLarge";
+import SearchExperience from "../components/SearchExperience";
 
 export default {
   title: "Candidate Search"
@@ -21,7 +21,7 @@ export function Search() {
   return (
     <Container>
       <InputLarge />
-      <InputSliderLarge
+      <SearchExperience
         value={radius}
         onChange={event => setRadius(parseInt(event.target.value))}
       />
