@@ -40,7 +40,7 @@ export default function SearchLocation({
         <InputSlider
           value={radiusValue}
           onChange={radiusChange}
-          sliderWidth="140px"
+          sliderWidth="160px"
           min="10"
           max="210"
           step="10"

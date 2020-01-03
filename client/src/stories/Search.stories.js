@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import SearchProfession from "../components/SearchProfession";
 import SearchExperience from "../components/SearchExperience";
 import SearchLocation from "../components/SearchLocation";
+import Button from "../components/Button";
 
 export default {
   title: "Candidate Search"
@@ -38,6 +39,7 @@ export function Search() {
         radiusValue={radius}
         radiusChange={event => setRadius(event.target.value)}
       />
+      <Button buttonText="suchen" />
     </Container>
   );
 }
