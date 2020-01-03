@@ -12,14 +12,15 @@ const PageWrapper = styled.div`
 export default function Profile(candId) {
   const [profile, setProfile] = React.useState([]);
 
-  async function refreshProfile() {
-    const foundProfile = await getCandidateDetails(candId);
-    setProfile(foundProfile);
-  }
-
   React.useEffect(() => {
+    async function refreshProfile() {
+      const foundProfile = await getCandidateDetails(candId);
+      setProfile(foundProfile);
+    }
+
     refreshProfile();
-  });
+  }, [candId]);
+
   return (
     <>
       {profile.map(profile => {

@@ -13,7 +13,7 @@ pool.on("connect", client => {
 
 const getCandidates = async (request, response) => {
   const results = await pool.query(
-    "SELECT * FROM application_application LIMIT 100"
+    `SELECT * FROM application_application LIMIT 100`
   );
   response.status(200).json(results.rows);
 };
