@@ -13,11 +13,9 @@ const StyledSlider = styled.input`
   width: 400px;
   height: 10px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 10px 0 0 30px;
   background: ${props => props.theme.colors.primary};
   outline: none;
-  transition: opacity 0.2s;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -35,23 +33,28 @@ const StyledSlider = styled.input`
     cursor: pointer;
   }
 `;
-const ExperienceContainer = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 700px;
+  width: 60%;
 `;
-const Value = styled.div`
-  /* align-self: end; */
+const Value = styled.span`
+  justify-content: flex-end;
+  display: flex;
+`;
+
+const StyledSpan = styled.span`
+  width: 200px;
+  height: auto;
 `;
 
 export default function InputSliderLarge({ value, onChange }) {
   const exactValue = value / 2;
   return (
     <>
-      <ExperienceContainer>
+      <Wrapper>
         <Label>
-          Berufserfahrung:
+          <StyledSpan>Berufserfahrung:</StyledSpan>
           <StyledSlider
             type="range"
             min="0"
@@ -64,7 +67,7 @@ export default function InputSliderLarge({ value, onChange }) {
         <Value>
           {exactValue > 20 ? "mehr als 20 Jahre" : `${exactValue} Jahre`}
         </Value>
-      </ExperienceContainer>
+      </Wrapper>
     </>
   );
 }

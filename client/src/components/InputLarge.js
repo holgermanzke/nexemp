@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 
 const Label = styled.label`
   font-size: 1.3rem;
-  width: 700px;
+  width: 60%;
+  display: flex;
 `;
 
 const Input = styled.input`
@@ -19,10 +20,15 @@ const Input = styled.input`
   color: ${props => props.theme.colors.background};
 `;
 
+const StyledSpan = styled.span`
+  width: 200px;
+  height: auto;
+`;
+
 export default function InputLarge() {
   return (
     <Label>
-      Berufsbezeichnung:
+      <StyledSpan>Berufsbezeichnung:</StyledSpan>
       <Input />
     </Label>
   );
