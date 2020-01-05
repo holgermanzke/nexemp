@@ -1,5 +1,5 @@
 export async function getCandidateDetails(candId) {
-  const response = await fetch(`/candidates/1793`, {
+  const response = await fetch(`/candidates`, {
     headers: {
       "Content-Type": "application/json"
     }

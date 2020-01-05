@@ -35,7 +35,7 @@ export default function ProfileDetails({
 }) {
   return (
     <Container>
-      <AboutMe aboutMe={candAboutMe} />
+      {candAboutMe && <AboutMe aboutMe={candAboutMe} />}
 
       <CareerHeadline>Werdegang</CareerHeadline>
       <Career
