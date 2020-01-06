@@ -17,7 +17,7 @@ const getCandidates = async (request, response) => {
   );
   const candidates = result.rows.reduce((candidates, currentApplication) => {
     const candidate = candidates[currentApplication.application_id] || {
-      id: currentApplication.application_id,
+      id: currentApplication.id,
       imgSrc:
         "https://www.xing.com/image/d_2_e_f7d62c0a7_12951104_10/holger-manzke-foto.1024x1024.jpg",
       firstName: currentApplication.first_name,
