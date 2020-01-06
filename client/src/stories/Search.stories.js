@@ -39,7 +39,7 @@ export function Search() {
         radiusValue={radius}
         radiusChange={event => setRadius(event.target.value)}
       />
-      <Button buttonText="suchen" />
+      <Button>suchen</Button>
     </Container>
   );
 }
