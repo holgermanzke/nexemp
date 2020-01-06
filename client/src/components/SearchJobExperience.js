@@ -1,30 +1,16 @@
 import React from "react";
-import styled from "@emotion/styled";
 import StyledSpan from "./StyledSpan";
 import InputSlider from "./InputSlider";
-
-const Label = styled.label`
-  font-size: 1.3rem;
-  display: flex;
-  margin-top: 30px;
-  align-items: center;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-`;
-const Value = styled.span`
-  justify-content: flex-end;
-  display: flex;
-`;
+import SearchWrapper from "./SearchWrapper";
+import SearchLabel from "./SearchLabel";
+import SearchValue from "./SearchValue";
 
 export default function SearchJobExperience({ value, onChange }) {
   const exactValue = value / 2;
   return (
     <>
-      <Wrapper>
-        <Label>
+      <SearchWrapper>
+        <SearchLabel>
           <StyledSpan label="Berufserfahrung" />
           <InputSlider
             min="0"
@@ -34,11 +20,11 @@ export default function SearchJobExperience({ value, onChange }) {
             onChange={onChange}
             sliderWidth="350px"
           />
-        </Label>
-        <Value>
+        </SearchLabel>
+        <SearchValue>
           {exactValue > 20 ? "mehr als 20 Jahre" : `${exactValue} Jahre`}
-        </Value>
-      </Wrapper>
+        </SearchValue>
+      </SearchWrapper>
     </>
   );
 }

@@ -1,25 +1,10 @@
 import React from "react";
-import styled from "@emotion/styled";
 import StyledSpan from "./StyledSpan";
 import InputField from "./InputField";
 import InputSlider from "./InputSlider";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-`;
-
-const Label = styled.label`
-  font-size: 1.3rem;
-  display: flex;
-  margin-top: 30px;
-  align-items: center;
-`;
-const Value = styled.span`
-  justify-content: flex-end;
-  display: flex;
-`;
+import SearchWrapper from "./SearchWrapper";
+import SearchLabel from "./SearchLabel";
+import SearchValue from "./SearchValue";
 
 export default function SearchLocation({
   cityValue,
@@ -28,8 +13,8 @@ export default function SearchLocation({
   radiusChange
 }) {
   return (
-    <Wrapper>
-      <Label>
+    <SearchWrapper>
+      <SearchLabel>
         <StyledSpan label="Ort" />
         <InputField
           type="number"
@@ -45,12 +30,12 @@ export default function SearchLocation({
           max="210"
           step="10"
         />
-      </Label>
-      <Value>
+      </SearchLabel>
+      <SearchValue>
         {radiusValue > 200
           ? "mehr als 200 Kilometer"
           : `${radiusValue} Kilometer`}
-      </Value>
-    </Wrapper>
+      </SearchValue>
+    </SearchWrapper>
   );
 }
