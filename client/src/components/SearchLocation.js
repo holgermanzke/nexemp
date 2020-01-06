@@ -20,7 +20,7 @@ export default function SearchLocation({
           type="number"
           value={cityValue}
           onChange={cityChange}
-          inputWidth="140px"
+          inputWidth="160px"
         />
         <InputSlider
           value={radiusValue}

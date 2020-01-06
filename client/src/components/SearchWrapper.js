@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  min-width: 580px;
 `;
 
 export default function SearchWrapper({ children }) {
