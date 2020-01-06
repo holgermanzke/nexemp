@@ -17,14 +17,20 @@ const Details = styled.h3`
 export default function Specials({ special1, special2 }) {
   return (
     <>
-      <FlexWrapper>
-        <CheckIcon />
-        <Details>{special1}</Details>
-      </FlexWrapper>
-      <FlexWrapper>
-        <CheckIcon />
-        <Details>{special2}</Details>
-      </FlexWrapper>
+      {special1 && (
+        <FlexWrapper>
+          <CheckIcon />
+          <Details>{special1}</Details>
+        </FlexWrapper>
+      )}
+      {special2 !== null && special2 !== special1 ? (
+        <FlexWrapper>
+          <CheckIcon />
+          <Details>{special2}</Details>
+        </FlexWrapper>
+      ) : (
+        ""
+      )}
     </>
   );
 }
