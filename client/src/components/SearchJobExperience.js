@@ -19,7 +19,7 @@ const Value = styled.span`
   display: flex;
 `;
 
-export default function SearchExperience({ value, onChange }) {
+export default function SearchJobExperience({ value, onChange }) {
   const exactValue = value / 2;
   return (
     <>

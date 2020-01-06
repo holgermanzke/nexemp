@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import SearchProfession from "../components/SearchProfession";
-import SearchExperience from "../components/SearchExperience";
+import SearchJobExperience from "../components/SearchJobExperience";
 import SearchLocation from "../components/SearchLocation";
 import Button from "../components/Button";
 
@@ -29,7 +29,7 @@ export function Search() {
         value={profession}
         onChange={event => setProfession(event.target.value)}
       />
-      <SearchExperience
+      <SearchJobExperience
         value={experience}
         onChange={event => setExperience(parseInt(event.target.value))}
       />
