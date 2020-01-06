@@ -9,6 +9,12 @@ const PageWrapper = styled.div`
   display: flex;
 `;
 
+function convertDate(date) {
+  const splittedDate = date.split("-");
+  const convertedDate = splittedDate[1] + "." + splittedDate[0];
+  return convertedDate;
+}
+
 export default function Profile(candId) {
   const [profiles, setProfiles] = React.useState([]);
 
@@ -24,6 +30,7 @@ export default function Profile(candId) {
   return (
     <>
       {profiles.map(profile => {
+        console.log(convertDate(profile.fromDates[0]));
         return (
           <PageWrapper key={profile.id}>
             <CandidateDetails
@@ -40,18 +47,18 @@ export default function Profile(candId) {
             <Separator />
             <ProfileDetails
               candAboutMe={profile.aboutMe}
-              candDate1From={profile.fromDates[0]}
-              candDate1Due={profile.dueDates[0]}
+              candDate1From={convertDate(profile.fromDates[0])}
+              candDate1Due={convertDate(profile.dueDates[0])}
               candComp1={profile.companies[0]}
               candCity1={profile.companiesCities[0]}
               candProfession1={profile.companiesProfessions[0]}
-              candDate2From={profile.fromDates[1]}
-              candDate2Due={profile.dueDates[1]}
+              candDate2From={convertDate(profile.fromDates[1])}
+              candDate2Due={convertDate(profile.dueDates[1])}
               candComp2={profile.companies[1]}
               candCity2={profile.companiesCities[1]}
               candProfession2={profile.companiesProfessions[1]}
-              candDate3From={profile.fromDates[2]}
-              candDate3Due={profile.dueDates[2]}
+              candDate3From={convertDate(profile.fromDates[2])}
+              candDate3Due={convertDate(profile.dueDates[2])}
               candComp3={profile.companies[2]}
               candCity3={profile.companiesCities[2]}
               candProfession3={profile.companiesProfessions[2]}
