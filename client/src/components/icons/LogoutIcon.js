@@ -2,7 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
-const Button = styled(Link)``;
 const Svg = styled.svg`
   margin-top: 39px;
   margin-right: 25px;
@@ -22,7 +21,7 @@ const Logout = styled.path`
 
 export default function LogoutIcon() {
   return (
-    <Button to="/">
+    <Link to="/">
       <Svg
         xmlns="http://www.w3.org/2000/svg"
         width="36"
@@ -31,6 +30,6 @@ export default function LogoutIcon() {
       >
         <Logout d="M13.5,0V4.5h18V27h-18v4.5H36V0ZM9,9,0,15.75,9,22.5V18H27V13.5H9Z" />
       </Svg>
-    </Button>
+    </Link>
   );
 }

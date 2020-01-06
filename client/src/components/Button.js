@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
 
-const But = styled.button`
+const Button = styled.button`
   font-size: 0.9rem;
   font-weight: 300;
   width: 180px;
@@ -20,6 +19,4 @@ const But = styled.button`
   }
 `;
 
-export default function Button({ buttonText }) {
-  return <But>{buttonText}</But>;
-}
+export default Button;
