@@ -15,7 +15,7 @@ export default function Profile(candId) {
   React.useEffect(() => {
     async function refreshProfile() {
       const foundProfile = await getCandidateDetails(candId);
-      setProfile(foundProfile);
+      setProfiles(foundProfile);
     }
 
     refreshProfile();
