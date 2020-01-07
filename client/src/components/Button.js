@@ -9,7 +9,7 @@ const Button = styled.button`
   border: 1px solid ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.text};
   outline: none;
-  margin: 40px auto 20px auto;
+  margin: 30px auto 30px auto;
   height: 35px;
   :hover {
     color: ${props => props.theme.colors.secondary};
