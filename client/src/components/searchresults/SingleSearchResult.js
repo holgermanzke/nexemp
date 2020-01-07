@@ -47,24 +47,33 @@ const Span = styled.span`
   padding: 0px 10px;
 `;
 
-export default function SingleSearchResult() {
+export default function SingleSearchResult({
+  profession,
+  experience = 2,
+  skill1 = "react",
+  skill2,
+  location,
+  age = 36
+}) {
   return (
     <Container>
       <SingleRow>
         <SingleResult>
           <Wrapper>
-            <Profession>Web Developerin</Profession>
-            <Experience>Berufserfahrung: 4 Jahre</Experience>
+            <Profession>{profession}</Profession>
+            {experience && (
+              <Experience>Berufserfahrung: {experience} Jahre</Experience>
+            )}
           </Wrapper>
           <Wrapper>
-            {/* <Headline>Skills</Headline> */}
             <Paragraph>
-              <Span>React</Span> <Span>Projektmanagement</Span>
+              {skill1 && <Span>{skill1}</Span>}
+              {skill2 && <Span>{skill2}</Span>}
             </Paragraph>
           </Wrapper>
           <Wrapper>
-            <Headline>Köln</Headline>
-            <Paragraph>25 Jahre</Paragraph>
+            <Headline>{location}</Headline>
+            {age && <Paragraph>{age} Jahre</Paragraph>}
           </Wrapper>
         </SingleResult>
         <Button to="#">Profil anfragen</Button>
