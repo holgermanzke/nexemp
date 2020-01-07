@@ -17,6 +17,7 @@ app.get("/", (request, response) => {
 
 app.get("/api/candidates", db.getCandidates);
 app.get("/api/candidates/:id", db.getCandidatesById);
+app.get("/api/searchresults", db.getSearchResults);
 
 app.listen(port, () => {
   console.log(`App is running on port ${port}`);
