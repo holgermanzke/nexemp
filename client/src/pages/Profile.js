@@ -3,7 +3,7 @@ import CandidateDetails from "../components/CandidateDetails";
 import Separator from "../components/Separator";
 import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
-import { getCandidateDetails } from "../components/getCandidateDetails";
+import { getCandidateDetails } from "../components/api/getCandidateDetails";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -20,7 +20,6 @@ export default function Profile(candId) {
 
     refreshProfile();
   }, [candId]);
-
   return (
     <>
       {profiles.map(profile => {
