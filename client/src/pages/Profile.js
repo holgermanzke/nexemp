@@ -43,7 +43,6 @@ export default function Profile(candId) {
   return (
     <>
       {profiles.map(profile => {
-        console.log(createdDate(profile.createDate));
         return (
           <PageWrapper key={profile.id}>
             <CandidateDetails
