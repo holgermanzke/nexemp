@@ -17,7 +17,6 @@ const NavButton = styled(Link)`
   margin-right: 25px;
   background: transparent;
   border: 1px solid ${props => props.theme.colors.secondary};
-  /* outline: none; */
   border-radius: 15px;
   color: ${props => props.theme.colors.text};
   font-size: 24px;

@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import Login from "./pages/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/message">
             <Message />
+          </Route>
+          <Route path="/searchresults">
+            <SearchResults />
           </Route>
           <Route path="/mycandidates">
             <MyCandidates />

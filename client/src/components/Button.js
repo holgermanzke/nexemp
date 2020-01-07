@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
-const Button = styled.button`
-  font-size: 0.9rem;
+const Button = styled(Link)`
+  font-size: 1.2rem;
   font-weight: 300;
   width: 180px;
   border-radius: 15px;
@@ -11,6 +12,10 @@ const Button = styled.button`
   outline: none;
   margin: 30px auto 30px auto;
   height: 35px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   :hover {
     color: ${props => props.theme.colors.secondary};
   }
