@@ -66,7 +66,7 @@ const getCandidatesById = async (request, response) => {
 
 const getSearchResults = async (request, response) => {
   const results = await pool.query(
-    "SELECT id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity FROM application_application WHERE to_tsvector(which_job || ' ' || position_or_graduation || ' ' || first_activity || ' ' || second_activity) @@ to_tsquery('entwickler')"
+    `SELECT id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity FROM application_application WHERE to_tsvector(which_job || ' ' || position_or_graduation || ' ' || first_activity || ' ' || second_activity) @@ to_tsquery('${request.query.prof}') LIMIT 10`
   );
   response.status(200).json(results.rows);
 };
