@@ -59,7 +59,7 @@ export default function ProfileDetails({
         city={candCity3}
         profession={candProfession3}
       />
-      <Button>Kontakt aufnehmen</Button>
+      <Button to="/message">Kontakt aufnehmen</Button>
     </Container>
   );
 }
