@@ -4,15 +4,23 @@ import Separator from "../components/Separator";
 import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
 import { getCandidateDetails } from "../components/api/getCandidateDetails";
+import { useParams } from "react-router-dom";
 
 const PageWrapper = styled.div`
   display: flex;
 `;
 
 function convertDate(date) {
-  const splittedDate = date.split("-");
-  const convertedDate = splittedDate[1] + "." + splittedDate[0];
-  return convertedDate;
+  if (date !== null) {
+    const splittedDate = date.split("-");
+
+    const convertedDate = splittedDate[1] + "." + splittedDate[0];
+
+    return convertedDate;
+  } else {
+    const convertedDate = "";
+    return convertedDate;
+  }
 }
 
 function createdDate(date) {
@@ -28,17 +36,19 @@ function createdDate(date) {
   }
 }
 
-export default function Profile(candId) {
+export default function Profile() {
   const [profiles, setProfiles] = React.useState([]);
+  let { id } = useParams();
+  console.log(id);
 
   React.useEffect(() => {
     async function refreshProfile() {
-      const foundProfile = await getCandidateDetails(candId);
+      const foundProfile = await getCandidateDetails(id);
       setProfiles(foundProfile);
     }
 
     refreshProfile();
-  }, [candId]);
+  }, [id]);
   return (
     <>
       {profiles.map(profile => {
