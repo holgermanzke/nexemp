@@ -10,7 +10,7 @@ const Button = styled(Link)`
   border: 1px solid ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.text};
   outline: none;
-  margin: 40px auto 20px auto;
+  margin: 30px auto 30px auto;
   height: 35px;
   text-decoration: none;
   display: flex;
