@@ -16,8 +16,9 @@ pool.on("connect", client => {
 function normalizeCandidate(sqlCandidate) {
   return {
     id: sqlCandidate.id,
-    // imgSrc:
-    //   "https://www.xing.com/image/d_2_e_f7d62c0a7_12951104_10/holger-manzke-foto.1024x1024.jpg",
+    imgSrc: `${(sqlCandidate.image &&
+      "https://bewerbungsgenerator.s3.eu-central-1.amazonaws.com/media/" + sqlCandidate.image) ||
+      "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg"}`,
     firstName: sqlCandidate.first_name,
     lastName: sqlCandidate.last_name,
     profession: sqlCandidate.which_job,
@@ -42,8 +43,7 @@ function normalizeCandidate(sqlCandidate) {
 function reduceSQLCandidates(sqlCandidates) {
   return sqlCandidates.reduce((candidates, currentApplication) => {
     const candidate =
-      candidates[currentApplication.application_id] ||
-      normalizeCandidate(currentApplication);
+      candidates[currentApplication.application_id] || normalizeCandidate(currentApplication);
 
     candidate.companies.push(currentApplication.company);
     candidate.fromDates.push(currentApplication.date_from);
