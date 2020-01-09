@@ -22,10 +22,7 @@ export default function Search() {
 
   return (
     <Container>
-      <SearchProfession
-        value={profession}
-        onChange={event => setProfession(event.target.value)}
-      />
+      <SearchProfession value={profession} onChange={event => setProfession(event.target.value)} />
       <SearchJobExperience
         value={experience}
         onChange={event => setExperience(parseInt(event.target.value))}

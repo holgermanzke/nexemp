@@ -52,6 +52,7 @@ const Span = styled.span`
   overflow: hidden;
   max-width: 250px;
   text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export default function SingleSearchResult({
