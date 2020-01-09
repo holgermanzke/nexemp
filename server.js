@@ -29,6 +29,7 @@ app.post("/api/emails", (request, response) => {
       console.log(error);
     } else {
       console.log("E-Mail sent!");
+      response.end();
     }
   });
   console.log("received");
