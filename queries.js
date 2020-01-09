@@ -42,8 +42,7 @@ function normalizeCandidate(sqlCandidate) {
 function reduceSQLCandidates(sqlCandidates) {
   return sqlCandidates.reduce((candidates, currentApplication) => {
     const candidate =
-      candidates[currentApplication.application_id] ||
-      normalizeCandidate(currentApplication);
+      candidates[currentApplication.application_id] || normalizeCandidate(currentApplication);
 
     candidate.companies.push(currentApplication.company);
     candidate.fromDates.push(currentApplication.date_from);

@@ -10,9 +10,6 @@ const Image = styled.img`
   object-position: top center;
 `;
 
-export default function Avatar({
-  imgSrc = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg",
-  alt
-}) {
+export default function Avatar({ imgSrc, alt }) {
   return <Image src={imgSrc} alt={alt} />;
 }
