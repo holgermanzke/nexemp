@@ -13,14 +13,9 @@ const PageWrapper = styled.div`
 function convertDate(date) {
   if (date !== null) {
     const splittedDate = date.split("-");
-
-    const convertedDate = splittedDate[1] + "." + splittedDate[0];
-
-    return convertedDate;
-  } else {
-    const convertedDate = "";
-    return convertedDate;
+    return splittedDate[1] + "." + splittedDate[0];
   }
+  return "";
 }
 
 function createdDate(date) {
@@ -48,6 +43,7 @@ export default function Profile() {
 
     refreshProfile();
   }, [id]);
+
   return (
     <>
       {profile.map(profile => {
