@@ -39,7 +39,6 @@ function createdDate(date) {
 export default function Profile() {
   const [profiles, setProfiles] = React.useState([]);
   let { id } = useParams();
-  console.log(id);
 
   React.useEffect(() => {
     async function refreshProfile() {

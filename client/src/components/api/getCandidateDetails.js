@@ -1,5 +1,4 @@
 export async function getCandidateDetails(candId) {
-  console.log("candId", candId);
   const response = await fetch(`../api/candidates/${candId}`, {
     headers: {
       "Content-Type": "application/json"
