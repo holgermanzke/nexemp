@@ -5,6 +5,7 @@ import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
 import { getCandidateDetails } from "../components/api/getCandidateDetails";
 import { useParams } from "react-router-dom";
+import { getJobExperience } from "../components/helpers/getJobExperience";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -52,6 +53,8 @@ export default function Profile() {
   return (
     <>
       {profiles.map(profile => {
+        getJobExperience(profile.fromDates[0], profile.dueDates[0]);
+        console.log(getJobExperience);
         return (
           <PageWrapper key={profile.id}>
             <CandidateDetails
