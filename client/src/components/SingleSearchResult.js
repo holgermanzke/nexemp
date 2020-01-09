@@ -49,6 +49,9 @@ const Span = styled.span`
   margin-top: 6px;
   border-radius: 15px;
   padding: 0px 10px;
+  overflow: hidden;
+  max-width: 250px;
+  text-overflow: ellipsis;
 `;
 
 export default function SingleSearchResult({
@@ -66,9 +69,7 @@ export default function SingleSearchResult({
         <SingleResult>
           <Wrapper>
             <Profession>{profession}</Profession>
-            {experience && (
-              <Experience>Berufserfahrung: {experience} Jahre</Experience>
-            )}
+            {experience && <Experience>Berufserfahrung: {experience} Jahre</Experience>}
           </Wrapper>
           <Wrapper>
             <Paragraph>
