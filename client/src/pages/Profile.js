@@ -37,20 +37,20 @@ function createdDate(date) {
 }
 
 export default function Profile() {
-  const [profiles, setProfiles] = React.useState([]);
+  const [profile, setProfile] = React.useState([]);
   let { id } = useParams();
 
   React.useEffect(() => {
     async function refreshProfile() {
       const foundProfile = await getCandidateDetails(id);
-      setProfiles(foundProfile);
+      setProfile(foundProfile);
     }
 
     refreshProfile();
   }, [id]);
   return (
     <>
-      {profiles.map(profile => {
+      {profile.map(profile => {
         return (
           <PageWrapper key={profile.id}>
             <CandidateDetails
