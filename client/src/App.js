@@ -30,7 +30,7 @@ function App() {
           <Route path="/message">
             <Message />
           </Route>
-          <Route path="/searchresults">
+          <Route path="/candidates">
             <SearchResults />
           </Route>
           <Route path="/mycandidates">

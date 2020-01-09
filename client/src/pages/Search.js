@@ -18,7 +18,7 @@ export default function Search() {
   const [experience, setExperience] = React.useState(0);
   const [city, setCity] = React.useState("");
   const [radius, setRadius] = React.useState(10);
-  const query = `searchresults?prof=${profession}`;
+  const link = `/candidates?prof=${profession}`;
 
   return (
     <Container>
@@ -36,7 +36,7 @@ export default function Search() {
         radiusValue={radius}
         radiusChange={event => setRadius(event.target.value)}
       />
-      <Button to={query}>suchen</Button>
+      <Button to={link}>suchen</Button>
     </Container>
   );
 }
