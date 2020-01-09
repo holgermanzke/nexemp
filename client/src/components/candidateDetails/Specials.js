@@ -23,13 +23,11 @@ export default function Specials({ special1, special2 }) {
           <Details>{special1}</Details>
         </FlexWrapper>
       )}
-      {special2 !== null && special2 !== special1 ? (
+      {special2 !== null && special2 !== special1 && (
         <FlexWrapper>
           <CheckIcon />
           <Details>{special2}</Details>
         </FlexWrapper>
-      ) : (
-        ""
       )}
     </>
   );

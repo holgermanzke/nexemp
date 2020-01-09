@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Image from "./candidateDetails/Image";
-import Name from "./candidateDetails/CandidateName";
+import Avatar from "./candidateDetails/Avatar";
+import CandidateName from "./candidateDetails/CandidateName";
 import Profession from "./candidateDetails/Profession";
 import Experience from "./candidateDetails/Experience";
 import Specials from "./candidateDetails/Specials";
@@ -30,17 +30,12 @@ export default function CandidateDetails({
   return (
     <>
       <Container>
-        <Image imgSrc={candSrc} alt={alt} />
-        <Name name={candName} />
+        <Avatar imgSrc={candSrc} alt={alt} />
+        <CandidateName>{candName}</CandidateName>
         <Profession profession={candProfession} />
         <Experience experience={candExperience} />
         <Specials special1={candSpecial1} special2={candSpecial2} />
-        <ContactDetails
-          email={candEMail}
-          phone={candPhone}
-          street={candStreet}
-          city={candCity}
-        />
+        <ContactDetails email={candEMail} phone={candPhone} street={candStreet} city={candCity} />
       </Container>
     </>
   );

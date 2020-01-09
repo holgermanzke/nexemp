@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const Picture = styled.img`
+const Image = styled.img`
   height: 300px;
   width: 250px;
   border-radius: 15px;
@@ -10,6 +10,6 @@ const Picture = styled.img`
   object-position: top center;
 `;
 
-export default function Image({ imgSrc, alt }) {
-  return <Picture src={imgSrc} alt={alt} />;
+export default function Avatar({ imgSrc, alt }) {
+  return <Image src={imgSrc} alt={alt} />;
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import { getSearchResults } from "../components/api/getSearchResults";
+import { getSearchResults } from "../api/getSearchResults";
 import { useLocation } from "react-router-dom";
-import SingleSearchResult from "../components/searchresults/SingleSearchResult";
+import SingleSearchResult from "../components/SingleSearchResult";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
