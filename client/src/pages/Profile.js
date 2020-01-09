@@ -5,6 +5,7 @@ import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
 import { getCandidateDetails } from "../components/api/getCandidateDetails";
 import { useParams } from "react-router-dom";
+import Button from "../components/Button";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -39,7 +40,6 @@ function createdDate(date) {
 export default function Profile() {
   const [profiles, setProfiles] = React.useState([]);
   let { id } = useParams();
-  console.log(id);
 
   React.useEffect(() => {
     async function refreshProfile() {
@@ -49,23 +49,40 @@ export default function Profile() {
 
     refreshProfile();
   }, [id]);
+
+  function handleClick(profile) {
+    console.log(profile);
+    const mailAdress = "manzkeholger@gmail.com";
+    const subject = "Ihr Profil wurde angefragt";
+    const mailText = `Guten Tag ${profile.firstName} ${profile.lastName}, ich möchte Sie kennenlernen`;
+
+    const mailData = { mailAdress, subject, mailText };
+    return fetch(`../api/emails`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(mailData)
+    });
+  }
+
   return (
     <>
-      {profiles.map(profile => {
-        return (
-          <PageWrapper key={profile.id}>
-            <CandidateDetails
-              candSrc={profile.imgSrc}
-              candName={profile.firstName + " " + profile.lastName}
-              candProfession={profile.profession}
-              candSpecial1={profile.special1}
-              candSpecial2={profile.special2}
-              candEMail={profile.eMail}
-              candPhone={profile.phone}
-              candStreet={profile.street + " " + profile.streetNumber}
-              candCity={profile.city}
-            />
-            <Separator />
+      {profiles.map(profile => (
+        <PageWrapper key={profile.id}>
+          <CandidateDetails
+            candSrc={profile.imgSrc}
+            candName={profile.firstName + " " + profile.lastName}
+            candProfession={profile.profession}
+            candSpecial1={profile.special1}
+            candSpecial2={profile.special2}
+            candEMail={profile.eMail}
+            candPhone={profile.phone}
+            candStreet={profile.street + " " + profile.streetNumber}
+            candCity={profile.city}
+          />
+          <Separator />
+          <div>
             <ProfileDetails
               candAboutMe={profile.aboutMe}
               candDate1From={convertDate(profile.fromDates[0])}
@@ -99,9 +116,12 @@ export default function Profile() {
               candCity3={profile.companiesCities[2]}
               candProfession3={profile.companiesProfessions[2]}
             />
-          </PageWrapper>
-        );
-      })}
+            <Button onClick={() => handleClick(profile)} to="/message">
+              Kontakt aufnehmen
+            </Button>
+          </div>
+        </PageWrapper>
+      ))}
     </>
   );
 }
