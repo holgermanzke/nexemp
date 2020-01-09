@@ -66,8 +66,10 @@ const getCandidatesById = async (request, response) => {
   const candidates = result.rows.reduce((candidates, currentApplication) => {
     const candidate = candidates[currentApplication.application_id] || {
       id: currentApplication.id,
-      // imgSrc:
-      //   "https://www.xing.com/image/d_2_e_f7d62c0a7_12951104_10/holger-manzke-foto.1024x1024.jpg",
+      imgSrc: `${(currentApplication.image &&
+        "https://bewerbungsgenerator.s3.eu-central-1.amazonaws.com/media/" +
+          currentApplication.image) ||
+        "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg"}`,
       firstName: currentApplication.first_name,
       lastName: currentApplication.last_name,
       profession: currentApplication.which_job,
