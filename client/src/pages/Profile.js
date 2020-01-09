@@ -3,7 +3,7 @@ import CandidateDetails from "../components/CandidateDetails";
 import Separator from "../components/Separator";
 import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
-import { getCandidateDetails } from "../components/api/getCandidateDetails";
+import { getCandidateDetails } from "../api/getCandidateDetails";
 import { useParams } from "react-router-dom";
 
 const PageWrapper = styled.div`
@@ -21,12 +21,10 @@ function convertDate(date) {
 function createdDate(date) {
   const formattedDate = new Date(date);
   if (formattedDate.getMonth() < 9) {
-    const compareDate =
-      "0" + (formattedDate.getMonth() + 1) + "." + formattedDate.getFullYear();
+    const compareDate = "0" + (formattedDate.getMonth() + 1) + "." + formattedDate.getFullYear();
     return compareDate;
   } else {
-    const compareDate =
-      formattedDate.getMonth() + 1 + "." + formattedDate.getFullYear();
+    const compareDate = formattedDate.getMonth() + 1 + "." + formattedDate.getFullYear();
     return compareDate;
   }
 }
@@ -65,8 +63,7 @@ export default function Profile() {
               candAboutMe={profile.aboutMe}
               candDate1From={convertDate(profile.fromDates[0])}
               candDate1Due={
-                createdDate(profile.createDate) ===
-                convertDate(profile.dueDates[0])
+                createdDate(profile.createDate) === convertDate(profile.dueDates[0])
                   ? "heute"
                   : convertDate(profile.dueDates[0])
               }
@@ -75,8 +72,7 @@ export default function Profile() {
               candProfession1={profile.companiesProfessions[0]}
               candDate2From={convertDate(profile.fromDates[1])}
               candDate2Due={
-                createdDate(profile.createDate) ===
-                convertDate(profile.dueDates[1])
+                createdDate(profile.createDate) === convertDate(profile.dueDates[1])
                   ? "heute"
                   : convertDate(profile.dueDates[1])
               }
@@ -85,8 +81,7 @@ export default function Profile() {
               candProfession2={profile.companiesProfessions[1]}
               candDate3From={convertDate(profile.fromDates[2])}
               candDate3Due={
-                createdDate(profile.createDate) ===
-                convertDate(profile.dueDates[2])
+                createdDate(profile.createDate) === convertDate(profile.dueDates[2])
                   ? "heute"
                   : convertDate(profile.dueDates[2])
               }
