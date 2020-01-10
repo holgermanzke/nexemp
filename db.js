@@ -34,7 +34,7 @@ function normalizeCandidate(sqlCandidate) {
     companies: [],
     fromDates: [],
     dueDates: [],
-    createDate: sqlCandidate.application_date.toLocaleDateString(),
+    createDate: sqlCandidate.application_date && sqlCandidate.application_date.toLocaleDateString(),
     companiesCities: [],
     companiesProfessions: []
   };

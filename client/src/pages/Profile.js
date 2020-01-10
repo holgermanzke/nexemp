@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
 `;
 
 function convertDate(date) {
-  if (date !== null) {
+  if (date === true) {
     const splittedDate = date.split("-");
     return splittedDate[1] + "." + splittedDate[0];
   }
