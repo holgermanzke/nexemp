@@ -70,7 +70,7 @@ const getCandidatesById = async (request, response) => {
 
 const getCandidates = async (request, response) => {
   const result = await pool.query(
-    `SELECT id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity, town FROM application_application WHERE to_tsvector(which_job || ' ' || position_or_graduation || ' ' || first_activity || ' ' || second_activity) @@ to_tsquery('${request.query.prof}') LIMIT 10`
+    `SELECT id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity, town FROM application_application WHERE to_tsvector(which_job || ' ' || position_or_graduation || ' ' || first_activity || ' ' || second_activity) @@ to_tsquery('${request.query.prof}') OFFSET 11 LIMIT 10`
   );
 
   // const candidates = reduceSQLCandidates(result.rows);
