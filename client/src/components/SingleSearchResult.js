@@ -66,9 +66,7 @@ export default function SingleSearchResult({
         <SingleResult>
           <Wrapper>
             <Profession>{profession}</Profession>
-            {experience && (
-              <Experience>Berufserfahrung: {experience} Jahre</Experience>
-            )}
+            {experience && <Experience>Berufserfahrung: {experience} Jahre</Experience>}
           </Wrapper>
           <Wrapper>
             <Paragraph>
