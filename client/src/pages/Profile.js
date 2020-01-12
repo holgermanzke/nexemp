@@ -18,7 +18,8 @@ function convertDate(date) {
     let formDate = date.replace(".", "-");
     formDate = formDate.replace("/", "-");
     const splittedDate = formDate.split("-");
-    if (splittedDate.length < 3) return splittedDate[0] + "." + splittedDate[1];
+    if (splittedDate.length < 2) return splittedDate;
+    else if (splittedDate.length < 3) return splittedDate[0] + "." + splittedDate[1];
     else return splittedDate[1] + "." + splittedDate[0];
   }
   return "";
