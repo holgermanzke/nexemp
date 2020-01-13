@@ -70,7 +70,7 @@ const getCandidatesById = async (request, response) => {
 
 const getCandidates = async (request, response) => {
   const result = await pool.query(
-    `SELECT DISTINCT ON (mail) mail, id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity, town, create_date FROM application_application WHERE to_tsvector(which_job || ' ' || position_or_graduation || ' ' || first_activity || ' ' || second_activity) @@ to_tsquery('${request.query.prof}') ORDER BY mail, create_date DESC LIMIT 10`
+    `SELECT DISTINCT ON (mail) create_date, id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity, town, create_date FROM application_application WHERE document_with_index @@ plainto_tsquery('${request.query.prof}') AND which_job!='NULL' ORDER BY mail, create_date, which_job DESC LIMIT 10`
   );
 
   // const candidates = reduceSQLCandidates(result.rows);
