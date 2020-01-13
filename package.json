@@ -6,11 +6,15 @@
   "scripts": {
     "storybook": "cd client && npm run storybook",
     "client": "cd client && npm start",
-    "build": "npm run build-storybook",
+    "build": "cd client && npm run build",
     "test": "cd client && npm run test",
     "build-storybook": "cd client && npm run build-storybook",
     "postinstall": "cd client && npm install",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.12.0"
   },
   "repository": {
     "type": "git",
