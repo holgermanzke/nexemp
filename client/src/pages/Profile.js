@@ -14,7 +14,7 @@ function convertDate(date) {
   if (date === "heute") {
     return "heute";
   }
-  if (date !== null) {
+  if (date !== null && date !== undefined) {
     let formDate = date.replace(".", "-");
     formDate = formDate.replace("/", "-");
     const splittedDate = formDate.split("-");
