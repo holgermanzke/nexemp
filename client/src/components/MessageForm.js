@@ -68,7 +68,7 @@ export default function MessageForm({ firstName, lastName }) {
           placeholder="Schreiben Sie dem Kandidaten eine Nachricht"
         />
 
-        <Button to="/search" onClick={() => handleClick()}>
+        <Button to="/message-sent" onClick={() => handleClick()}>
           Nachricht senden
         </Button>
       </Form>
