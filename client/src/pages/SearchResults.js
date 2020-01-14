@@ -3,6 +3,7 @@ import { getSearchResults } from "../api/getSearchResults";
 import { useLocation } from "react-router-dom";
 import SingleSearchResult from "../components/SingleSearchResult";
 import styled from "@emotion/styled";
+import NoResults from "../components/NoResults";
 import Preloader from "../components/Preloader";
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ export default function SearchResults() {
   }, [location]);
   return (
     <>
+      {results.length < 1 && <NoResults />}
       <Container />
       {loading && <Preloader />}
       {!loading &&
