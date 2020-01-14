@@ -7,10 +7,10 @@ const mailgun = require("mailgun-js")({ apiKey: api_key, domain: domain });
 const sendMail = (mailAdress, subject, mailText, callback) => {
   console.log(sendMail);
   const data = {
-    from: `NexEmp <holger@bewerbung.net>`,
+    from: `Julia Musterfrau <julia@musterfrau.de>`,
     to: `${mailAdress}`,
-    subject: { subject },
-    text: `Hell0 ${mailText}`
+    subject: subject,
+    text: mailText
   };
   mailgun.messages().send(data, function(error, body) {
     if (error) {

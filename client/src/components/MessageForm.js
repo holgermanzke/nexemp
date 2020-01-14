@@ -33,9 +33,27 @@ const Message = styled.textarea`
   color: ${props => props.theme.colors.background};
   font-size: 1rem;
   letter-spacing: 1px;
+  padding: 15px;
+  border-radius: 15px;
 `;
 
 export default function MessageForm({ firstName, lastName }) {
+  const [message, setMessage] = React.useState("");
+  function handleClick() {
+    const mailAdress = "manzkeholger@gmail.com";
+    const subject = `Julia Musterfrau möchte Sie kennenlernen`;
+    const mailText = message;
+
+    const mailData = { mailAdress, subject, mailText };
+    return fetch(`/api/emails`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(mailData)
+    });
+  }
+
   return (
     <Container>
       <Recipient>
@@ -46,12 +64,13 @@ export default function MessageForm({ firstName, lastName }) {
         <Message
           rows="15"
           cols="100"
-          placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-          blanditiis deserunt voluptatum nemo, beatae iste reprehenderit
-          adipisci nulla accusamus harum?"
+          onChange={event => setMessage(event.target.value)}
+          placeholder="Schreiben Sie dem Kandidaten eine Nachricht"
         />
 
-        <Button>Nachricht senden</Button>
+        <Button to="/search" onClick={() => handleClick()}>
+          Nachricht senden
+        </Button>
       </Form>
     </Container>
   );
