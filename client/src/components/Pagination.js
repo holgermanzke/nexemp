@@ -23,7 +23,7 @@ const Page = styled(Link)`
   }
 `;
 
-export default function Pagination(page) {
+export default function Pagination({ page }) {
   const [active, setActive] = React.useState(false);
   function handleClick() {
     setActive(!active);
