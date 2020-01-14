@@ -15,11 +15,12 @@ function convertDate(date) {
     return "heute";
   }
   if (date !== null && date !== undefined) {
-    let formDate = date.replace(".", "-");
+    let formDate = date.replace(/\./g, "-");
     formDate = formDate.replace("/", "-");
     const splittedDate = formDate.split("-");
     if (splittedDate.length < 2) return splittedDate;
     else if (splittedDate.length < 3) return splittedDate[0] + "." + splittedDate[1];
+    else if (splittedDate[2].length > 2) return splittedDate[1] + "." + splittedDate[2];
     else return splittedDate[1] + "." + splittedDate[0];
   }
   return "";
