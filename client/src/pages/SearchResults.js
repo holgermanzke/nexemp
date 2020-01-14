@@ -3,6 +3,7 @@ import { getSearchResults } from "../api/getSearchResults";
 import { useLocation } from "react-router-dom";
 import SingleSearchResult from "../components/SingleSearchResult";
 import styled from "@emotion/styled";
+import Preloader from "../components/Preloader";
 
 const Container = styled.div`
   margin-top: 75px;
@@ -10,20 +11,23 @@ const Container = styled.div`
 
 export default function SearchResults() {
   const [results, setResults] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
   const location = useLocation().search;
 
   React.useEffect(() => {
     async function refreshResults() {
       const foundResults = await getSearchResults(location);
       setResults(foundResults);
+      setLoading(false);
     }
     refreshResults();
   }, [location]);
   return (
     <>
       <Container />
-      {results.map(result => {
-        return (
+      {loading && <Preloader />}
+      {!loading &&
+        results.map(result => (
           <div key={result.id}>
             <SingleSearchResult
               profession={result.which_job}
@@ -35,8 +39,7 @@ export default function SearchResults() {
               profileURL={`../profile/${result.id}`}
             />
           </div>
-        );
-      })}
+        ))}
     </>
   );
 }
