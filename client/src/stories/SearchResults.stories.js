@@ -13,3 +13,7 @@ export function SingleResult() {
     </>
   );
 }
+
+export function PageinationFunction() {
+  return <Pagination />;
+}
