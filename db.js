@@ -16,8 +16,7 @@ pool.on("connect", client => {
 function normalizeCandidate(sqlCandidate) {
   return {
     id: sqlCandidate.id,
-    imgSrc: `${(sqlCandidate.image &&
-      "https://bewerbungsgenerator.s3.eu-central-1.amazonaws.com/media/" + sqlCandidate.image) ||
+    imgSrc: `${(sqlCandidate.image && process.env.IMG_URL + sqlCandidate.image) ||
       "https://upload.wikimedia.org/wikipedia/commons/a/ad/Placeholder_no_text.svg"}`,
     firstName: sqlCandidate.first_name,
     lastName: sqlCandidate.last_name,
