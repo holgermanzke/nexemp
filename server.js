@@ -15,6 +15,7 @@ app.get("/", (request, response) => {
 
 app.get("/api/candidates", db.getCandidates);
 app.get("/api/candidates/:id", db.getCandidatesById);
+// app.post("/api/candidates", db.createCandidate);
 
 // Handle React routing, return all requests to React app
 app.get("*", function(req, res) {

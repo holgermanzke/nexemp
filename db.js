@@ -72,8 +72,16 @@ const getCandidates = async (request, response) => {
     `SELECT DISTINCT ON (mail) create_date, id, first_name, last_name, which_job, position_or_graduation, first_activity, second_activity, town, create_date FROM application_application WHERE document_with_index @@ plainto_tsquery('${request.query.prof}') AND which_job!='NULL' ORDER BY mail, create_date, which_job DESC LIMIT 10`
   );
 
-  // const candidates = reduceSQLCandidates(result.rows);
   response.status(200).json(result.rows);
 };
+
+// const createCandidate = async (request, response) => {
+//   const { id, image, first_name, last_name } = await request.query;
+//   pool.query(
+//     `INSERT INTO application_application (id, image, first_name, last_name) VALUES (${id}, ${image}, ${first_name}, ${last_name})`
+//     // [id, image, first_name, last_name]
+//   );
+//   response.status(201).send(`Candidate added: ${id}, ${image}, ${first_name}, ${last_name}`);
+// };
 
 module.exports = { getCandidates, getCandidatesById };
