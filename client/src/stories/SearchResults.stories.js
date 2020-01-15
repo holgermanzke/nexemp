@@ -1,5 +1,5 @@
 import React from "react";
-import SingleSearchResult from "../components/searchresults/SingleSearchResult";
+import SingleSearchResult from "../components/SingleSearchResult";
 
 export default {
   title: "Search Results"

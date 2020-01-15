@@ -1,5 +1,5 @@
 export async function getSearchResults(query) {
-  const response = await fetch(`api/searchresults${query}`, {
+  const response = await fetch(`/api/candidates${query}`, {
     headers: {
       "Content-Type": "application/json"
     }

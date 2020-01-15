@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Button from "../Button";
+import Button from "./Button";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const SingleRow = styled.div`
 `;
 
 const SingleResult = styled.div`
-  height: 70px;
+  height: 100px;
   width: 65%;
   margin: 35px 50px;
   background: ${props => props.theme.colors.primary};
@@ -34,6 +34,9 @@ const Headline = styled.h3`
 `;
 const Paragraph = styled.p`
   font-weight: 200;
+  display: flex;
+  align-items: space-around;
+  flex-wrap: wrap;
 `;
 
 const Wrapper = styled.div`
@@ -43,17 +46,23 @@ const Wrapper = styled.div`
 const Span = styled.span`
   background: ${props => props.theme.colors.secondary};
   margin-left: 10px;
+  margin-top: 6px;
   border-radius: 15px;
   padding: 0px 10px;
+  overflow: hidden;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export default function SingleSearchResult({
   profession,
-  experience = 2,
-  skill1 = "react",
+  experience,
+  skill1,
   skill2,
   location,
-  age = 36
+  age,
+  profileURL
 }) {
   return (
     <Container>
@@ -61,9 +70,7 @@ export default function SingleSearchResult({
         <SingleResult>
           <Wrapper>
             <Profession>{profession}</Profession>
-            {experience && (
-              <Experience>Berufserfahrung: {experience} Jahre</Experience>
-            )}
+            {experience && <Experience>Berufserfahrung: {experience} Jahre</Experience>}
           </Wrapper>
           <Wrapper>
             <Paragraph>
@@ -76,7 +83,7 @@ export default function SingleSearchResult({
             {age && <Paragraph>{age} Jahre</Paragraph>}
           </Wrapper>
         </SingleResult>
-        <Button to="#">Profil anfragen</Button>
+        <Button to={profileURL}>Profil anzeigen</Button>
       </SingleRow>
     </Container>
   );
