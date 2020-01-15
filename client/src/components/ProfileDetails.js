@@ -2,7 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import AboutMe from "./profileDetails/AboutMe";
 import Career from "./profileDetails/Career";
-import Button from "./Button";
 
 const Container = styled.div`
   display: flex;
@@ -59,7 +58,6 @@ export default function ProfileDetails({
         city={candCity3}
         profession={candProfession3}
       />
-      <Button to="/message">Kontakt aufnehmen</Button>
     </Container>
   );
 }

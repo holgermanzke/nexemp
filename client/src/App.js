@@ -6,10 +6,10 @@ import Message from "./pages/Message";
 import MyCandidates from "./pages/MyCandidates";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
-import Login from "./pages/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import SearchResults from "./pages/SearchResults";
+import MessageSent from "./pages/MessageSent";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <Login />
+            <Search />
           </Route>
           <Route path="/search">
             <Search />
@@ -29,6 +29,9 @@ function App() {
           </Route>
           <Route path="/message">
             <Message />
+          </Route>
+          <Route path="/message-sent">
+            <MessageSent />
           </Route>
           <Route path="/candidates">
             <SearchResults />

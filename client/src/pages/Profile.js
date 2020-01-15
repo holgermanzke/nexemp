@@ -5,6 +5,7 @@ import ProfileDetails from "../components/ProfileDetails";
 import styled from "@emotion/styled";
 import { getCandidateDetails } from "../api/getCandidateDetails";
 import { useParams } from "react-router-dom";
+import Button from "../components/Button";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -67,36 +68,39 @@ export default function Profile() {
               candCity={profile.city}
             />
             <Separator />
-            <ProfileDetails
-              candAboutMe={profile.aboutMe}
-              candDate1From={convertDate(profile.fromDates[0])}
-              candDate1Due={
-                createdDate(profile.createDate) === convertDate(profile.dueDates[0])
-                  ? "heute"
-                  : convertDate(profile.dueDates[0])
-              }
-              candComp1={profile.companies[0]}
-              candCity1={profile.companiesCities[0]}
-              candProfession1={profile.companiesProfessions[0]}
-              candDate2From={convertDate(profile.fromDates[1])}
-              candDate2Due={
-                createdDate(profile.createDate) === convertDate(profile.dueDates[1])
-                  ? "heute"
-                  : convertDate(profile.dueDates[1])
-              }
-              candComp2={profile.companies[1]}
-              candCity2={profile.companiesCities[1]}
-              candProfession2={profile.companiesProfessions[1]}
-              candDate3From={convertDate(profile.fromDates[2])}
-              candDate3Due={
-                createdDate(profile.createDate) === convertDate(profile.dueDates[2])
-                  ? "heute"
-                  : convertDate(profile.dueDates[2])
-              }
-              candComp3={profile.companies[2]}
-              candCity3={profile.companiesCities[2]}
-              candProfession3={profile.companiesProfessions[2]}
-            />
+            <div>
+              <ProfileDetails
+                candAboutMe={profile.aboutMe}
+                candDate1From={convertDate(profile.fromDates[0])}
+                candDate1Due={
+                  createdDate(profile.createDate) === convertDate(profile.dueDates[0])
+                    ? "heute"
+                    : convertDate(profile.dueDates[0])
+                }
+                candComp1={profile.companies[0]}
+                candCity1={profile.companiesCities[0]}
+                candProfession1={profile.companiesProfessions[0]}
+                candDate2From={convertDate(profile.fromDates[1])}
+                candDate2Due={
+                  createdDate(profile.createDate) === convertDate(profile.dueDates[1])
+                    ? "heute"
+                    : convertDate(profile.dueDates[1])
+                }
+                candComp2={profile.companies[1]}
+                candCity2={profile.companiesCities[1]}
+                candProfession2={profile.companiesProfessions[1]}
+                candDate3From={convertDate(profile.fromDates[2])}
+                candDate3Due={
+                  createdDate(profile.createDate) === convertDate(profile.dueDates[2])
+                    ? "heute"
+                    : convertDate(profile.dueDates[2])
+                }
+                candComp3={profile.companies[2]}
+                candCity3={profile.companiesCities[2]}
+                candProfession3={profile.companiesProfessions[2]}
+              />
+              <Button to="/message">Kontakt aufnehmen</Button>
+            </div>
           </PageWrapper>
         );
       })}

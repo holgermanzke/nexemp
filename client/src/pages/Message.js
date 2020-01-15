@@ -1,5 +1,6 @@
 import React from "react";
+import MessageForm from "../components/MessageForm";
 
 export default function Message() {
-  return <h1>Nachrichten</h1>;
+  return <MessageForm firstName="Holger" lastName="Manzke" />;
 }
