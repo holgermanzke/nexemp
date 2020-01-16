@@ -15,6 +15,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/api/candidates", db.getCandidates);
+app.get("/api/candidates/sum", db.getSumOfSearchResults);
 app.get("/api/candidates/:id", db.getCandidatesById);
 
 app.post("/api/emails", (request, response) => {
