@@ -1,18 +1,20 @@
 export function sumExperience() {
-  let fromArray = ["01.01.2010", "01.01.2011", "01.01.2012"];
-  fromArray.foreach(from => {
-    from = Math.min(fromArray);
-    from = from.replace(/\./g, "-");
-    from = from.split("-");
+  const fromArray = ["01.01.2010", "01.01.2011", "01.01.2012"];
+  const fromDateArray = fromArray.map(from => {
+    // from = Math.min(fromArray);
+    let normalizedForm = from.replace(/\./g, "-");
+    normalizedForm = normalizedForm.split("-");
+    normalizedForm = `${normalizedForm[2]}-${normalizedForm[1]}-${normalizedForm[0]}`;
+    const fromDate = new Date(normalizedForm);
+    return fromDate
   });
-  {
-    let from = Math.min(fromArray);
-    from = from.replace(/\./g, "-");
-    from = from.split("-");
-  }
+  console.log(fromDateArray)
+  // {
+  //   let from = Math.min(fromArray);
+  //   from = from.replace(/\./g, "-");
+  //   from = from.split("-");
+  // }
 
-  let fromDate = `${from[2]}-${from[1]}-${from[0]}`;
-  fromDate = new Date(fromDate);
   let due = "31.12.2013";
   due = due.replace(/\./g, "-");
   due = due.split("-");
