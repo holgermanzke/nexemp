@@ -5,6 +5,7 @@ import SingleSearchResult from "../components/SingleSearchResult";
 import styled from "@emotion/styled";
 import NoResults from "../components/NoResults";
 import Preloader from "../components/Preloader";
+import sumExperience from "../components/helpers/sumExperience";
 
 const Container = styled.div`
   margin-top: 75px;
@@ -33,7 +34,7 @@ export default function SearchResults() {
           <div key={result.id}>
             <SingleSearchResult
               profession={result.which_job}
-              experience={5}
+              experience={sumExperience(result.fromDates, result.dueDates)}
               skill1={result.position_or_graduation}
               skill2={result.first_activity}
               location={result.town}
