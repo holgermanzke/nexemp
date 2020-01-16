@@ -2,6 +2,14 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
+const Container = styled.div`
+  display: flex;
+  margin: 10px;
+`;
+const Div = styled.div`
+  margin: 5px;
+`;
+
 const Page = styled(Link)`
   width: 40px;
   height: 40px;
@@ -23,15 +31,29 @@ const Page = styled(Link)`
   }
 `;
 
-export default function Pagination({ page }) {
+export default function Pagination({totalResults}) {
   const [active, setActive] = React.useState(false);
+  const resultsPerPage = 10;
+  const totResults = totalResults;
+  const pageNumbers = [];
+  let totalResultPages = Math.ceil(totResults / resultsPerPage);
+
+  for (let i = 1; i <= totalResultPages; i++) {
+    pageNumbers.push(i);
+  }
+
   function handleClick() {
     setActive(!active);
-    console.log(active);
   }
   return (
-    <Page onClick={handleClick} to="">
-      {page}
-    </Page>
+    <Container>
+      {pageNumbers.map(number => (
+        <Div key={number}>
+          <Page onClick={handleClick} to="" value={number}>
+            {number}
+          </Page>
+        </Div>
+      ))}
+    </Container>
   );
 }
