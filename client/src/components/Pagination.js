@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
   margin: 10px;
+  justify-content: center;
 `;
 const Div = styled.div`
-  margin: 5px;
+  margin: 10px;
 `;
 
 const Page = styled(Link)`
@@ -31,8 +32,8 @@ const Page = styled(Link)`
   }
 `;
 
-export default function Pagination({totalResults}) {
-  const [active, setActive] = React.useState(false);
+export default function Pagination({ totalResults }) {
+  // const [active, setActive] = React.useState(false);
   const resultsPerPage = 10;
   const totResults = totalResults;
   const pageNumbers = [];
@@ -42,16 +43,17 @@ export default function Pagination({totalResults}) {
     pageNumbers.push(i);
   }
 
-  function handleClick() {
-    setActive(!active);
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
   }
+  let query = useQuery();
+  const test = query.get("prof");
+
   return (
     <Container>
       {pageNumbers.map(number => (
         <Div key={number}>
-          <Page onClick={handleClick} to="" value={number}>
-            {number}
-          </Page>
+          <Page to={`/candidates?prof=${test}&page=${number}`}>{number}</Page>
         </Div>
       ))}
     </Container>

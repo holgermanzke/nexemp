@@ -18,7 +18,7 @@ export default function Search() {
   const [experience, setExperience] = React.useState(0);
   const [city, setCity] = React.useState("");
   const [radius, setRadius] = React.useState(10);
-  const link = `/candidates?prof=${profession}&off=1`;
+  const link = `/candidates?prof=${profession}`;
 
   return (
     <Container>

@@ -16,15 +16,15 @@ export default function SearchResults() {
   const [results, setResults] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [totalResults, setTotalResults] = React.useState([]);
+  const maxTotalResults = Math.min(totalResults, 150);
   const location = useLocation().search;
 
   React.useEffect(() => {
     async function refreshResults() {
       const foundResults = await getSearchResults(location);
       setResults(foundResults);
-      const foundTotalResults = await getSumOfSearchResults();
+      const foundTotalResults = await getSumOfSearchResults(location);
       setTotalResults(foundTotalResults);
-      console.log(totalResults);
       setLoading(false);
     }
     refreshResults();
@@ -48,7 +48,7 @@ export default function SearchResults() {
           </div>
         ))}
       {results.length < 1 && <NoResults />}
-      <Pagination totalResults={totalResults} />
+      <Pagination totalResults={maxTotalResults} />
     </>
   );
 }

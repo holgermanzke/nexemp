@@ -1,10 +1,9 @@
 export async function getSumOfSearchResults(query) {
-  const response = await fetch(`/api/candidates${query}`, {
+  const response = await fetch(`/api/candidates/sum${query}`, {
     headers: {
       "Content-Type": "application/json"
     }
   });
   const data = await response.json();
-  console.log(data);
-  return data;
+  return data[0].count;
 }
