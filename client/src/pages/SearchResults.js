@@ -26,7 +26,6 @@ export default function SearchResults() {
   }, [location]);
   return (
     <>
-      {results.length < 1 && <NoResults />}
       <Container />
       {loading && <Preloader />}
       {!loading &&
@@ -43,6 +42,8 @@ export default function SearchResults() {
             />
           </div>
         ))}
+      {results.length < 1 && <NoResults />}
+      <Pagination />
     </>
   );
 }
