@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import Pagination from "../components/Pagination";
 import NoResults from "../components/NoResults";
 import Preloader from "../components/Preloader";
+import { getSumOfSearchResults } from "../api/getSumOfSearchResults";
 
 const Container = styled.div`
   margin-top: 75px;
@@ -14,16 +15,20 @@ const Container = styled.div`
 export default function SearchResults() {
   const [results, setResults] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [totalResults, setTotalResults] = React.useState([]);
   const location = useLocation().search;
 
   React.useEffect(() => {
     async function refreshResults() {
       const foundResults = await getSearchResults(location);
       setResults(foundResults);
+      const foundTotalResults = await getSumOfSearchResults();
+      setTotalResults(foundTotalResults);
+      console.log(totalResults);
       setLoading(false);
     }
     refreshResults();
-  }, [location]);
+  }, [location, totalResults]);
   return (
     <>
       <Container />
@@ -43,7 +48,7 @@ export default function SearchResults() {
           </div>
         ))}
       {results.length < 1 && <NoResults />}
-      <Pagination />
+      <Pagination totalResults={totalResults} />
     </>
   );
 }
