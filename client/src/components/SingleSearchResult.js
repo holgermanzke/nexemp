@@ -13,13 +13,14 @@ const SingleRow = styled.div`
 `;
 
 const SingleResult = styled.div`
-  height: 100px;
+  height: 130px;
   width: 65%;
   margin: 35px 50px;
   background: ${props => props.theme.colors.primary};
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 const Profession = styled.h2`
   font-size: 1.1rem;
